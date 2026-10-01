@@ -1755,3 +1755,575 @@ button {
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   15. CONTATO DIRETO COM O VENDEDOR (MODAL, CHAT E BOTÕES DE PRODUTOS)
+   ========================================================================== */
+
+/* Ações no Rodapé do Card do Produto */
+.card-produto-acoes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-contatar-vendedor {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background-color: var(--cor-azul-gelo);
+  color: var(--cor-azul-escuro);
+  border: 1px solid var(--cor-azul-claro);
+  border-radius: 8px;
+  font-size: 0.825rem;
+  font-weight: 700;
+  transition: var(--transicao-suave);
+  cursor: pointer;
+}
+
+.btn-contatar-vendedor:hover {
+  background-color: var(--cor-azul-primario);
+  color: var(--cor-branco);
+  border-color: var(--cor-azul-primario);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+}
+
+.btn-contatar-vendedor svg {
+  color: var(--cor-azul-primario);
+  transition: var(--transicao-suave);
+}
+
+.btn-contatar-vendedor:hover svg {
+  color: var(--cor-branco);
+}
+
+/* Botão Vendedor Online no Cabeçalho */
+.btn-vendedor-topo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--cor-verde-suave);
+  color: var(--cor-verde-escuro);
+  border: 1px solid var(--cor-verde-claro);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transicao-suave);
+}
+
+.btn-vendedor-topo:hover {
+  background-color: var(--cor-verde-primario);
+  color: var(--cor-branco);
+  border-color: var(--cor-verde-primario);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.ponto-online {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.4);
+  animation: pulsoOnline 1.8s infinite;
+}
+
+@keyframes pulsoOnline {
+  0% { transform: scale(0.9); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+  100% { transform: scale(0.9); opacity: 1; }
+}
+
+/* Modal de Contato com o Vendedor */
+.modal-vendedor-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transicao-suave);
+}
+
+.modal-vendedor-overlay.ativo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-vendedor-card {
+  background-color: var(--cor-branco);
+  width: 100%;
+  max-width: 520px;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.35);
+  border: 1px solid var(--cor-borda);
+  overflow: hidden;
+  animation: zoomEntrada 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-vendedor-cabecalho {
+  background: linear-gradient(135deg, var(--cor-azul-escuro), var(--cor-azul-primario));
+  color: var(--cor-branco);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.vendedor-perfil-bloco {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.vendedor-avatar-moldura {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid var(--cor-branco);
+  overflow: hidden;
+  background-color: var(--cor-azul-claro);
+  flex-shrink: 0;
+}
+
+.vendedor-avatar-moldura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vendedor-status-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  border: 2px solid var(--cor-branco);
+}
+
+.vendedor-info-texto h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.vendedor-info-texto p {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-vendedor-fechar {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--cor-branco);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transicao-suave);
+}
+
+.modal-vendedor-fechar:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.1);
+}
+
+.modal-vendedor-corpo {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-height: calc(85vh - 120px);
+  overflow-y: auto;
+}
+
+/* Card do Produto Selecionado dentro do Modal */
+.modal-produto-destaque {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: var(--cor-azul-gelo);
+  border: 1px solid var(--cor-azul-claro);
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+.modal-produto-thumb {
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  object-fit: cover;
+  background-color: var(--cor-branco);
+  border: 1px solid var(--cor-borda);
+}
+
+.modal-produto-info {
+  flex: 1;
+}
+
+.modal-produto-rotulo {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cor-azul-primario);
+  letter-spacing: 0.5px;
+}
+
+.modal-produto-titulo {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--cor-azul-marinho);
+  line-height: 1.3;
+}
+
+.modal-produto-valor {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--cor-verde-escuro);
+}
+
+/* Botões de Dúvidas Rápidas */
+.duvidas-rapidas-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.duvidas-rapidas-bloco span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--cor-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.duvidas-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-duvida {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--cor-texto-principal);
+  cursor: pointer;
+  transition: var(--transicao-suave);
+}
+
+.chip-duvida:hover {
+  background-color: var(--cor-azul-gelo);
+  border-color: var(--cor-azul-primario);
+  color: var(--cor-azul-primario);
+}
+
+/* Mensagem personalizada */
+.modal-mensagem-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-mensagem-bloco label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cor-azul-marinho);
+}
+
+.modal-mensagem-input {
+  width: 100%;
+  min-height: 85px;
+  padding: 12px 14px;
+  background-color: var(--cor-fundo);
+  border: 1.5px solid var(--cor-borda);
+  border-radius: 10px;
+  font-size: 0.925rem;
+  color: var(--cor-texto-principal);
+  resize: vertical;
+  transition: var(--transicao-suave);
+}
+
+.modal-mensagem-input:focus {
+  background-color: var(--cor-branco);
+  border-color: var(--cor-azul-primario);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+/* Ações de Contato */
+.modal-vendedor-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-whats-vendedor {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: var(--cor-branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: var(--transicao-suave);
+}
+
+.btn-whats-vendedor:hover {
+  background: linear-gradient(135deg, #1fa851, #0e7266);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  color: var(--cor-branco);
+}
+
+.btn-chat-vendedor {
+  background-color: var(--cor-azul-gelo);
+  color: var(--cor-azul-primario);
+  border: 1.5px solid var(--cor-azul-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transicao-suave);
+}
+
+.btn-chat-vendedor:hover {
+  background-color: var(--cor-azul-primario);
+  color: var(--cor-branco);
+  border-color: var(--cor-azul-primario);
+}
+
+.modal-vendedor-telefone-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--cor-texto-secundario);
+  padding-top: 4px;
+}
+
+.modal-vendedor-telefone-info a {
+  color: var(--cor-azul-primario);
+  font-weight: 700;
+}
+
+/* Widget de Bate-Papo ao Vivo com Vendedor (Chat Widget Flutuante) */
+.chat-vendedor-janela {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  height: 480px;
+  max-height: calc(100vh - 80px);
+  background-color: var(--cor-branco);
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.28);
+  border: 1px solid var(--cor-borda);
+  display: flex;
+  flex-direction: column;
+  z-index: 2900;
+  overflow: hidden;
+  transform: translateY(120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chat-vendedor-janela.aberto {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.chat-janela-cabecalho {
+  background: linear-gradient(135deg, var(--cor-azul-escuro), var(--cor-azul-primario));
+  color: var(--cor-branco);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-janela-atendente {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-avatar-mini {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cor-branco);
+  object-fit: cover;
+}
+
+.chat-atendente-dados strong {
+  display: block;
+  font-size: 0.925rem;
+}
+
+.chat-atendente-dados span {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chat-btn-fechar {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--cor-branco);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transicao-suave);
+}
+
+.chat-btn-fechar:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.chat-janela-mensagens {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f8fafc;
+}
+
+.chat-balao {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  animation: fadeIn 0.3s ease;
+}
+
+.chat-balao-vendedor {
+  background-color: var(--cor-branco);
+  color: var(--cor-texto-principal);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--cor-borda);
+}
+
+.chat-balao-cliente {
+  background: linear-gradient(135deg, var(--cor-azul-primario), var(--cor-azul-escuro));
+  color: var(--cor-branco);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
+}
+
+.chat-digitando {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  background-color: var(--cor-branco);
+  border-radius: 14px;
+  width: fit-content;
+  border: 1px solid var(--cor-borda);
+  align-self: flex-start;
+}
+
+.chat-ponto-digitando {
+  width: 6px;
+  height: 6px;
+  background-color: var(--cor-azul-primario);
+  border-radius: 50%;
+  animation: pulsoDigitando 1.2s infinite;
+}
+
+.chat-ponto-digitando:nth-child(2) { animation-delay: 0.2s; }
+.chat-ponto-digitando:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulsoDigitando {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+
+.chat-janela-rodape {
+  padding: 10px 12px;
+  background-color: var(--cor-branco);
+  border-top: 1px solid var(--cor-borda);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-input-texto {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid var(--cor-borda);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  background-color: var(--cor-fundo);
+}
+
+.chat-input-texto:focus {
+  border-color: var(--cor-azul-primario);
+  background-color: var(--cor-branco);
+}
+
+.chat-btn-enviar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--cor-azul-primario);
+  color: var(--cor-branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transicao-suave);
+  flex-shrink: 0;
+}
+
+.chat-btn-enviar:hover {
+  background: var(--cor-azul-escuro);
+  transform: scale(1.05);
+}

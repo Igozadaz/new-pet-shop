@@ -512,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   }
 
-  // Submissão do formulário
+  // Submissão do formulário: Redireciona diretamente para o WhatsApp do Vendedor
   if (formContato) {
     formContato.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -525,38 +525,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (nomeValido && petValido && telValido && servicoValido && msgValida) {
         const btnEnviar = formContato.querySelector('button[type="submit"]');
-        const textoOriginal = btnEnviar ? btnEnviar.innerHTML : 'Enviar Mensagem';
+        const textoOriginal = btnEnviar ? btnEnviar.innerHTML : 'Solicitar Agendamento no WhatsApp';
 
+        const nome = inputNome.value.trim();
+        const pet = inputPet.value.trim();
+        const tipoPet = document.getElementById('formTipoPet') ? document.getElementById('formTipoPet').value : 'Pet';
+        const telefone = inputTelefone.value.trim();
+        const servico = inputServico.value.trim();
+        const mensagem = inputMensagem.value.trim();
+
+        // Monta a mensagem completa e formatada para o WhatsApp do vendedor
+        let msgWhats = '🐾 *NOVA SOLICITAÇÃO DE AGENDAMENTO - PATA & CIA* 🐾\n\n';
+        msgWhats += `👤 *Nome do Tutor(a):* ${nome}\n`;
+        msgWhats += `🐶 *Nome do Pet:* ${pet} (${tipoPet})\n`;
+        msgWhats += `📱 *Telefone/WhatsApp do Tutor:* ${telefone}\n`;
+        msgWhats += `✂️ *Serviço Desejado:* ${servico}\n`;
+        msgWhats += `📝 *Observações / Data Desejada:* ${mensagem}\n\n`;
+        msgWhats += 'Olá! Acabei de preencher o formulário no site e gostaria de confirmar o agendamento!';
+
+        const numeroVendedor = '5511999998888';
+        const urlWhatsApp = `https://wa.me/${numeroVendedor}?text=${encodeURIComponent(msgWhats)}`;
+
+        // Feedback visual de carregamento
         if (btnEnviar) {
           btnEnviar.disabled = true;
           btnEnviar.innerHTML = `
-            <svg class="anim-girar" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="anim-girar" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
               <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor"></path>
             </svg>
-            Enviando agendamento...
+            Abrindo WhatsApp do Vendedor...
           `;
         }
 
-        // Simulação de requisição com resposta em 1 segundo
+        exibirToast(`Tudo pronto, ${nome.split(' ')[0]}! Redirecionando para o WhatsApp do vendedor... 🐾`, 'sucesso');
+
+        // Redireciona o cliente diretamente para o WhatsApp
         setTimeout(() => {
+          window.open(urlWhatsApp, '_blank') || (window.location.href = urlWhatsApp);
+
           if (btnEnviar) {
             btnEnviar.disabled = false;
             btnEnviar.innerHTML = textoOriginal;
           }
 
-          // Mensagem de sucesso
-          exibirToast(`Obrigado, ${inputNome.value.split(' ')[0]}! Agendamento recebido para ${inputPet.value}. Entraremos em contato! 🐾`, 'sucesso');
-
-          // Limpa os campos e estilos
+          // Limpa os campos do formulário
           formContato.reset();
           [inputNome, inputPet, inputTelefone, inputServico, inputMensagem].forEach(c => {
             c?.classList.remove('sucesso');
             c?.classList.remove('erro');
           });
-        }, 1000);
+        }, 700);
+
       } else {
-        exibirToast('Por favor, preencha todos os campos obrigatórios corretamente.', 'erro');
+        exibirToast('Por favor, preencha todos os campos obrigatórios corretamente antes de agendar.', 'erro');
       }
     });
   }
@@ -595,5 +617,264 @@ document.addEventListener('DOMContentLoaded', () => {
       elementoToast.classList.remove('visivel');
     }, 4500);
   }
+
+  /* ----------------------------------------------------------------------------
+   * 11. SISTEMA COMPLETO DE CONTATO COM O VENDEDOR
+   * ----------------------------------------------------------------------------
+   */
+  const modalVendedorOverlay = document.getElementById('modalVendedorOverlay');
+  const btnFecharModalVendedor = document.getElementById('btnFecharModalVendedor');
+  const btnVendedorTopo = document.getElementById('btnVendedorTopo');
+  const btnMenuMobileVendedor = document.getElementById('btnMenuMobileVendedor');
+  const btnDuvidasVendedorCarrinho = document.getElementById('btnDuvidasVendedorCarrinho');
+  const botoesContatarVendedor = document.querySelectorAll('.btn-contatar-vendedor');
+  const chipsDuvida = document.querySelectorAll('.chip-duvida');
+  const msgVendedorInput = document.getElementById('msgVendedorInput');
+  const btnEnviarWhatsAppVendedor = document.getElementById('btnEnviarWhatsAppVendedor');
+  const btnAbrirChatAoVivo = document.getElementById('btnAbrirChatAoVivo');
+
+  // Elementos do card de produto no modal do vendedor
+  const modalVendedorProdutoCard = document.getElementById('modalVendedorProdutoCard');
+  const modalVendedorProdutoImg = document.getElementById('modalVendedorProdutoImg');
+  const modalVendedorProdutoNome = document.getElementById('modalVendedorProdutoNome');
+  const modalVendedorProdutoPreco = document.getElementById('modalVendedorProdutoPreco');
+  const modalVendedorProdutoRotulo = document.getElementById('modalVendedorProdutoRotulo');
+
+  // Estado do produto atualmente em foco para o vendedor
+  let produtoVendedorAtual = {
+    nome: 'Atendimento Geral de Vendas',
+    preco: '',
+    img: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=200&q=80',
+    tipo: 'geral'
+  };
+
+  // Abre a janela modal do vendedor
+  function abrirModalVendedor(dadosProduto = null) {
+    if (dadosProduto) {
+      produtoVendedorAtual = dadosProduto;
+      if (modalVendedorProdutoImg) modalVendedorProdutoImg.src = dadosProduto.img;
+      if (modalVendedorProdutoNome) modalVendedorProdutoNome.textContent = dadosProduto.nome;
+      if (modalVendedorProdutoPreco) {
+        modalVendedorProdutoPreco.textContent = dadosProduto.preco ? `R$ ${dadosProduto.preco.replace('.', ',')}` : '';
+      }
+      if (modalVendedorProdutoRotulo) {
+        modalVendedorProdutoRotulo.textContent = dadosProduto.tipo === 'carrinho' ? 'Itens do seu Carrinho' : 'Produto de Interesse';
+      }
+      if (modalVendedorProdutoCard) modalVendedorProdutoCard.style.display = 'flex';
+    } else {
+      produtoVendedorAtual = {
+        nome: 'Dúvidas Gerais sobre Produtos e Serviços',
+        preco: '',
+        img: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=200&q=80',
+        tipo: 'geral'
+      };
+      if (modalVendedorProdutoNome) modalVendedorProdutoNome.textContent = 'Dúvidas Gerais sobre Produtos e Serviços';
+      if (modalVendedorProdutoPreco) modalVendedorProdutoPreco.textContent = 'Atendimento Online';
+      if (modalVendedorProdutoRotulo) modalVendedorProdutoRotulo.textContent = 'Canal de Vendas & Consultoria';
+    }
+
+    if (msgVendedorInput && !msgVendedorInput.value) {
+      msgVendedorInput.value = dadosProduto && dadosProduto.nome !== 'Dúvidas Gerais sobre Produtos e Serviços'
+        ? `Olá, Beatriz! Gostaria de mais informações sobre o produto: ${dadosProduto.nome}.`
+        : 'Olá, Beatriz! Gostaria de tirar algumas dúvidas com o setor de vendas.';
+    }
+
+    modalVendedorOverlay?.classList.add('ativo');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function fecharModalVendedor() {
+    modalVendedorOverlay?.classList.remove('ativo');
+    document.body.style.overflow = '';
+  }
+
+  btnFecharModalVendedor?.addEventListener('click', fecharModalVendedor);
+  modalVendedorOverlay?.addEventListener('click', (e) => {
+    if (e.target === modalVendedorOverlay) fecharModalVendedor();
+  });
+
+  // Abertura a partir do botão do topo
+  btnVendedorTopo?.addEventListener('click', () => {
+    abrirModalVendedor();
+  });
+
+  // Abertura a partir do menu mobile
+  btnMenuMobileVendedor?.addEventListener('click', () => {
+    menuMobileGaveta?.classList.remove('aberto');
+    btnMenuMobile?.classList.remove('ativo');
+    abrirModalVendedor();
+  });
+
+  // Abertura a partir de qualquer card de produto
+  botoesContatarVendedor.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const nome = btn.getAttribute('data-nome') || 'Produto Pata & Cia';
+      const preco = btn.getAttribute('data-preco') || '';
+      const img = btn.getAttribute('data-img') || '';
+
+      abrirModalVendedor({
+        nome,
+        preco,
+        img,
+        tipo: 'produto'
+      });
+    });
+  });
+
+  // Abertura a partir do carrinho de compras
+  btnDuvidasVendedorCarrinho?.addEventListener('click', () => {
+    alternarCarrinho(false); // Fecha o carrinho
+    
+    let resumoItens = 'Carrinho de Compras';
+    let totalCarrinho = '0,00';
+
+    if (carrinho.length > 0) {
+      const nomes = carrinho.map(i => `${i.quantidade}x ${i.nome}`).join(', ');
+      resumoItens = nomes.length > 60 ? nomes.slice(0, 57) + '...' : nomes;
+      totalCarrinho = (carrinho.reduce((acc, i) => acc + (i.preco * i.quantidade), 0)).toFixed(2);
+    }
+
+    abrirModalVendedor({
+      nome: resumoItens,
+      preco: totalCarrinho,
+      img: carrinho.length > 0 ? carrinho[0].img : 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=200&q=80',
+      tipo: 'carrinho'
+    });
+  });
+
+  // Chips de perguntas rápidas
+  chipsDuvida.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const textoDuvida = chip.getAttribute('data-duvida');
+      if (msgVendedorInput && textoDuvida) {
+        msgVendedorInput.value = textoDuvida;
+        msgVendedorInput.focus();
+        exibirToast('Pergunta preenchida! Clique em Conversar no WhatsApp ou no Chat.', 'aviso');
+      }
+    });
+  });
+
+  // Enviar para WhatsApp do Vendedor
+  btnEnviarWhatsAppVendedor?.addEventListener('click', () => {
+    const textoMensagem = msgVendedorInput ? msgVendedorInput.value.trim() : '';
+    
+    let mensagemFormatada = 'Olá, Beatriz! 🐾\n';
+    mensagemFormatada += 'Estou no site da Pata & Cia e gostaria de falar com você sobre vendas.\n\n';
+
+    if (produtoVendedorAtual && produtoVendedorAtual.nome) {
+      mensagemFormatada += `*Item de Interesse:* ${produtoVendedorAtual.nome}\n`;
+      if (produtoVendedorAtual.preco) {
+        mensagemFormatada += `*Valor:* R$ ${produtoVendedorAtual.preco.replace('.', ',')}\n\n`;
+      }
+    }
+
+    mensagemFormatada += `*Minha Mensagem:* ${textoMensagem || 'Gostaria de informações e condições de pagamento.'}`;
+
+    const urlWhats = `https://wa.me/5511999998888?text=${encodeURIComponent(mensagemFormatada)}`;
+    window.open(urlWhats, '_blank');
+
+    exibirToast('Conectando ao WhatsApp da vendedora Beatriz... 🐾', 'sucesso');
+    fecharModalVendedor();
+  });
+
+  /* ----------------------------------------------------------------------------
+   * 12. CHAT AO VIVO FLUTUANTE COM A VENDEDORA (SIMULAÇÃO REALISTA)
+   * ----------------------------------------------------------------------------
+   */
+  const chatVendedorJanela = document.getElementById('chatVendedorJanela');
+  const btnFecharChatAoVivo = document.getElementById('btnFecharChatAoVivo');
+  const chatJanelaMensagens = document.getElementById('chatJanelaMensagens');
+  const chatDigitando = document.getElementById('chatDigitando');
+  const chatInputTexto = document.getElementById('chatInputTexto');
+  const btnEnviarMsgChat = document.getElementById('btnEnviarMsgChat');
+
+  // Abre a janela de bate-papo
+  function abrirChatAoVivo(mensagemInicial = '') {
+    fecharModalVendedor();
+    chatVendedorJanela?.classList.add('aberto');
+
+    if (mensagemInicial && chatJanelaMensagens) {
+      adicionarMensagemChat(mensagemInicial, 'cliente');
+      simularRespostaVendedora(mensagemInicial);
+    }
+
+    setTimeout(() => {
+      chatInputTexto?.focus();
+    }, 400);
+  }
+
+  function fecharChatAoVivo() {
+    chatVendedorJanela?.classList.remove('aberto');
+  }
+
+  btnAbrirChatAoVivo?.addEventListener('click', () => {
+    const msg = msgVendedorInput ? msgVendedorInput.value.trim() : '';
+    abrirChatAoVivo(msg);
+  });
+
+  btnFecharChatAoVivo?.addEventListener('click', fecharChatAoVivo);
+
+  // Adiciona balão de mensagem no histórico do chat
+  function adicionarMensagemChat(texto, autor = 'cliente') {
+    if (!chatJanelaMensagens) return;
+
+    const balao = document.createElement('div');
+    balao.className = `chat-balao ${autor === 'cliente' ? 'chat-balao-cliente' : 'chat-balao-vendedor'}`;
+    balao.textContent = texto;
+
+    chatJanelaMensagens.appendChild(balao);
+    chatJanelaMensagens.scrollTop = chatJanelaMensagens.scrollHeight;
+  }
+
+  // Resposta automática e inteligente da vendedora
+  function simularRespostaVendedora(perguntaCliente) {
+    if (!chatDigitando || !chatJanelaMensagens) return;
+
+    chatDigitando.style.display = 'flex';
+    chatJanelaMensagens.scrollTop = chatJanelaMensagens.scrollHeight;
+
+    setTimeout(() => {
+      chatDigitando.style.display = 'none';
+
+      let resposta = '';
+      const textoLower = perguntaCliente.toLowerCase();
+
+      if (textoLower.includes('pronta entrega') || textoLower.includes('estoque')) {
+        resposta = `Temos sim! Temos estoque disponível para retirada hoje mesmo na loja física ou entrega via motoboy express em até 3 horas na sua região. Gostaria que eu reserve uma unidade para você? 📦`;
+      } else if (textoLower.includes('pix') || textoLower.includes('desconto')) {
+        resposta = `Com certeza! Para pagamento à vista no Pix, oferecemos 5% de desconto especial em toda a linha da loja. Posso gerar sua chave de pagamento com o desconto aplicado agora mesmo! 🏷️`;
+      } else if (textoLower.includes('frete') || textoLower.includes('entrega')) {
+        resposta = `O frete é grátis para compras acima de R$ 150,00! Para valores menores, a taxa fixa de entrega expressa para toda a capital é de apenas R$ 12,00. Qual o seu bairro? 🚚`;
+      } else if (textoLower.includes('filhote') || textoLower.includes('porte') || textoLower.includes('idade') || textoLower.includes('tamanho')) {
+        resposta = `Essa é uma excelente pergunta! Temos opções específicas para cada fase e porte do pet. Qual é a raça e idade do seu amiguinho? Posso te recomendar a dosagem ou tamanho ideal! 🐶🐱`;
+      } else if (produtoVendedorAtual && produtoVendedorAtual.nome && produtoVendedorAtual.nome !== 'Dúvidas Gerais sobre Produtos e Serviços') {
+        resposta = `Perfeito! O produto "${produtoVendedorAtual.nome}" é um dos mais vendidos e elogiados pelos nossos clientes. Se quiser fechar agora, posso enviar o link do WhatsApp para confirmarmos seu endereço de entrega! 🐾`;
+      } else {
+        resposta = `Entendido perfeitamente! Fico feliz em te ajudar com isso. Se preferir mais agilidade para fotos dos produtos ou pagamento imediato, podemos continuar também pelo nosso WhatsApp (11) 99999-8888! Como prefere? 😊`;
+      }
+
+      adicionarMensagemChat(resposta, 'vendedor');
+    }, 1200);
+  }
+
+  // Envio de nova mensagem pelo cliente no chat
+  function processarEnvioMensagemChat() {
+    if (!chatInputTexto) return;
+    const texto = chatInputTexto.value.trim();
+    if (!texto) return;
+
+    adicionarMensagemChat(texto, 'cliente');
+    chatInputTexto.value = '';
+    simularRespostaVendedora(texto);
+  }
+
+  btnEnviarMsgChat?.addEventListener('click', processarEnvioMensagemChat);
+  chatInputTexto?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      processarEnvioMensagemChat();
+    }
+  });
 
 });

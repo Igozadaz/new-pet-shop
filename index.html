@@ -51,8 +51,14 @@
         <a href="#contato" class="menu-link">Contato</a>
       </nav>
 
-      <!-- Ações do Cabeçalho: Carrinho de Compras e Agendamento -->
+      <!-- Ações do Cabeçalho: Vendedor Online, Carrinho e Agendamento -->
       <div class="cabecalho-acoes">
+        <!-- Botão Falar com Vendedor -->
+        <button class="btn-vendedor-topo" id="btnVendedorTopo" title="Falar com Vendedor de Plantão" aria-label="Falar com Vendedor">
+          <span class="ponto-online"></span>
+          <span>Vendedor</span>
+        </button>
+
         <!-- Botão do Carrinho -->
         <button class="btn-carrinho-gatilho" id="btnCarrinhoGatilho" title="Ver carrinho de compras" aria-label="Abrir carrinho">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -93,6 +99,10 @@
       <a href="#depoimentos" class="menu-link">Depoimentos</a>
       <a href="#galeria" class="menu-link">Galeria de Pets</a>
       <a href="#contato" class="menu-link">Contato e Localização</a>
+      <button class="menu-link btn-abrir-vendedor-menu" id="btnMenuMobileVendedor" style="background: none; text-align: left; color: var(--cor-verde-escuro); font-weight: 700; display: flex; align-items: center; gap: 8px;">
+        <span class="ponto-online"></span>
+        Falar com Vendedor Online
+      </button>
       <a href="#contato" class="btn btn-primario" style="margin-top: 10px;">Agendar Serviço</a>
     </div>
   </header>
@@ -395,19 +405,34 @@
               <div class="card-produto-estrelas">★★★★★ <span>(4.9)</span></div>
               <div class="card-produto-rodape">
                 <span class="card-produto-preco">R$ 149,90</span>
-                <button 
-                  class="btn-add-carrinho" 
-                  title="Adicionar ao carrinho"
-                  data-id="prod-1"
-                  data-nome="Ração Premium Cães 15kg"
-                  data-preco="149.90"
-                  data-img="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=200&q=80"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
+                <div class="card-produto-acoes">
+                  <button 
+                    class="btn-contatar-vendedor" 
+                    title="Falar com o vendedor sobre este produto"
+                    data-id="prod-1"
+                    data-nome="Ração Premium Super Fórmula Cães 15kg"
+                    data-preco="149.90"
+                    data-img="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Vendedor</span>
+                  </button>
+                  <button 
+                    class="btn-add-carrinho" 
+                    title="Adicionar ao carrinho"
+                    data-id="prod-1"
+                    data-nome="Ração Premium Cães 15kg"
+                    data-preco="149.90"
+                    data-img="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </article>
@@ -427,19 +452,34 @@
               <div class="card-produto-estrelas">★★★★★ <span>(5.0)</span></div>
               <div class="card-produto-rodape">
                 <span class="card-produto-preco">R$ 129,90</span>
-                <button 
-                  class="btn-add-carrinho" 
-                  title="Adicionar ao carrinho"
-                  data-id="prod-2"
-                  data-nome="Ração Gourmet Gatos Salmão"
-                  data-preco="129.90"
-                  data-img="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=200&q=80"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
+                <div class="card-produto-acoes">
+                  <button 
+                    class="btn-contatar-vendedor" 
+                    title="Falar com o vendedor sobre este produto"
+                    data-id="prod-2"
+                    data-nome="Ração Gourmet Gatos Salmão 10kg"
+                    data-preco="129.90"
+                    data-img="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Vendedor</span>
+                  </button>
+                  <button 
+                    class="btn-add-carrinho" 
+                    title="Adicionar ao carrinho"
+                    data-id="prod-2"
+                    data-nome="Ração Gourmet Gatos Salmão"
+                    data-preco="129.90"
+                    data-img="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </article>
@@ -459,19 +499,34 @@
               <div class="card-produto-estrelas">★★★★★ <span>(4.8)</span></div>
               <div class="card-produto-rodape">
                 <span class="card-produto-preco">R$ 179,00</span>
-                <button 
-                  class="btn-add-carrinho" 
-                  title="Adicionar ao carrinho"
-                  data-id="prod-3"
-                  data-nome="Caminha Nuvem Pelúcia Lavável"
-                  data-preco="179.00"
-                  data-img="https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=200&q=80"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
+                <div class="card-produto-acoes">
+                  <button 
+                    class="btn-contatar-vendedor" 
+                    title="Falar com o vendedor sobre este produto"
+                    data-id="prod-3"
+                    data-nome="Caminha Nuvem Pelúcia Lavável"
+                    data-preco="179.00"
+                    data-img="https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Vendedor</span>
+                  </button>
+                  <button 
+                    class="btn-add-carrinho" 
+                    title="Adicionar ao carrinho"
+                    data-id="prod-3"
+                    data-nome="Caminha Nuvem Pelúcia Lavável"
+                    data-preco="179.00"
+                    data-img="https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </article>
@@ -491,19 +546,34 @@
               <div class="card-produto-estrelas">★★★★★ <span>(4.9)</span></div>
               <div class="card-produto-rodape">
                 <span class="card-produto-preco">R$ 38,90</span>
-                <button 
-                  class="btn-add-carrinho" 
-                  title="Adicionar ao carrinho"
-                  data-id="prod-4"
-                  data-nome="Brinquedo Dental Interativo"
-                  data-preco="38.90"
-                  data-img="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=200&q=80"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
+                <div class="card-produto-acoes">
+                  <button 
+                    class="btn-contatar-vendedor" 
+                    title="Falar com o vendedor sobre este produto"
+                    data-id="prod-4"
+                    data-nome="Brinquedo Dental Interativo"
+                    data-preco="38.90"
+                    data-img="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Vendedor</span>
+                  </button>
+                  <button 
+                    class="btn-add-carrinho" 
+                    title="Adicionar ao carrinho"
+                    data-id="prod-4"
+                    data-nome="Brinquedo Dental Interativo"
+                    data-preco="38.90"
+                    data-img="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </article>
@@ -523,19 +593,34 @@
               <div class="card-produto-estrelas">★★★★★ <span>(5.0)</span></div>
               <div class="card-produto-rodape">
                 <span class="card-produto-preco">R$ 219,00</span>
-                <button 
-                  class="btn-add-carrinho" 
-                  title="Adicionar ao carrinho"
-                  data-id="prod-5"
-                  data-nome="Torre Arranhador com Casinha"
-                  data-preco="219.00"
-                  data-img="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=200&q=80"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
+                <div class="card-produto-acoes">
+                  <button 
+                    class="btn-contatar-vendedor" 
+                    title="Falar com o vendedor sobre este produto"
+                    data-id="prod-5"
+                    data-nome="Torre Arranhador com Casinha"
+                    data-preco="219.00"
+                    data-img="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Vendedor</span>
+                  </button>
+                  <button 
+                    class="btn-add-carrinho" 
+                    title="Adicionar ao carrinho"
+                    data-id="prod-5"
+                    data-nome="Torre Arranhador com Casinha"
+                    data-preco="219.00"
+                    data-img="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </article>
@@ -555,19 +640,34 @@
               <div class="card-produto-estrelas">★★★★★ <span>(4.9)</span></div>
               <div class="card-produto-rodape">
                 <span class="card-produto-preco">R$ 74,90</span>
-                <button 
-                  class="btn-add-carrinho" 
-                  title="Adicionar ao carrinho"
-                  data-id="prod-6"
-                  data-nome="Peitoral Ergonômico Anti-Puxão"
-                  data-preco="74.90"
-                  data-img="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=200&q=80"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
+                <div class="card-produto-acoes">
+                  <button 
+                    class="btn-contatar-vendedor" 
+                    title="Falar com o vendedor sobre este produto"
+                    data-id="prod-6"
+                    data-nome="Peitoral Ergonômico Anti-Puxão"
+                    data-preco="74.90"
+                    data-img="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Vendedor</span>
+                  </button>
+                  <button 
+                    class="btn-add-carrinho" 
+                    title="Adicionar ao carrinho"
+                    data-id="prod-6"
+                    data-nome="Peitoral Ergonômico Anti-Puxão"
+                    data-preco="74.90"
+                    data-img="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </article>
@@ -587,19 +687,34 @@
               <div class="card-produto-estrelas">★★★★★ <span>(4.7)</span></div>
               <div class="card-produto-rodape">
                 <span class="card-produto-preco">R$ 42,50</span>
-                <button 
-                  class="btn-add-carrinho" 
-                  title="Adicionar ao carrinho"
-                  data-id="prod-7"
-                  data-nome="Shampoo Hipoalergênico 500ml"
-                  data-preco="42.50"
-                  data-img="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=200&q=80"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
+                <div class="card-produto-acoes">
+                  <button 
+                    class="btn-contatar-vendedor" 
+                    title="Falar com o vendedor sobre este produto"
+                    data-id="prod-7"
+                    data-nome="Shampoo Hipoalergênico 500ml"
+                    data-preco="42.50"
+                    data-img="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Vendedor</span>
+                  </button>
+                  <button 
+                    class="btn-add-carrinho" 
+                    title="Adicionar ao carrinho"
+                    data-id="prod-7"
+                    data-nome="Shampoo Hipoalergênico 500ml"
+                    data-preco="42.50"
+                    data-img="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </article>
@@ -619,19 +734,34 @@
               <div class="card-produto-estrelas">★★★★★ <span>(4.9)</span></div>
               <div class="card-produto-rodape">
                 <span class="card-produto-preco">R$ 22,90</span>
-                <button 
-                  class="btn-add-carrinho" 
-                  title="Adicionar ao carrinho"
-                  data-id="prod-8"
-                  data-nome="Biscoitos Naturais 250g"
-                  data-preco="22.90"
-                  data-img="https://images.unsplash.com/photo-1582798358481-d199fb7347bb?auto=format&fit=crop&w=200&q=80"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
+                <div class="card-produto-acoes">
+                  <button 
+                    class="btn-contatar-vendedor" 
+                    title="Falar com o vendedor sobre este produto"
+                    data-id="prod-8"
+                    data-nome="Biscoitos Naturais 250g"
+                    data-preco="22.90"
+                    data-img="https://images.unsplash.com/photo-1582798358481-d199fb7347bb?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Vendedor</span>
+                  </button>
+                  <button 
+                    class="btn-add-carrinho" 
+                    title="Adicionar ao carrinho"
+                    data-id="prod-8"
+                    data-nome="Biscoitos Naturais 250g"
+                    data-preco="22.90"
+                    data-img="https://images.unsplash.com/photo-1582798358481-d199fb7347bb?auto=format&fit=crop&w=200&q=80"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </article>
@@ -998,13 +1128,14 @@
 
               <!-- Serviço Desejado -->
               <div class="form-grupo">
-                <label for="formServico" class="form-label">Serviço Desejado *</label>
+                <label for="formServico" class="form-label">Serviço ou Assunto Desejado *</label>
                 <select id="formServico" class="form-select" required>
-                  <option value="">Selecione um serviço...</option>
-                  <option value="Banho e Tosa Especial">Banho & Tosa Especial</option>
-                  <option value="Consulta Veterinária">Consulta Veterinária</option>
-                  <option value="Hotelzinho e Creche">Hotelzinho & Creche Pet</option>
-                  <option value="Higiene e Spa Relaxante">Higiene & Spa Relaxante</option>
+                  <option value="">Selecione uma opção...</option>
+                  <option value="Falar com Vendedor / Vendas">Falar com Vendedor / Vendas de Produtos 💬</option>
+                  <option value="Banho e Tosa Especial">Banho & Tosa Especial ✂️</option>
+                  <option value="Consulta Veterinária">Consulta Veterinária 🩺</option>
+                  <option value="Hotelzinho e Creche">Hotelzinho & Creche Pet 🏡</option>
+                  <option value="Higiene e Spa Relaxante">Higiene & Spa Relaxante 🫧</option>
                   <option value="Dúvida Geral / Outro">Dúvida Geral / Outro Assunto</option>
                 </select>
                 <span class="mensagem-erro">Escolha um serviço</span>
@@ -1017,14 +1148,16 @@
                 <span class="mensagem-erro">Escreva uma mensagem breve</span>
               </div>
 
-              <!-- Botão de Envio -->
-              <button type="submit" class="btn btn-verde" style="width: 100%; padding: 14px; font-size: 1.05rem;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              <!-- Botão de Envio com Redirecionamento Direto para o WhatsApp -->
+              <button type="submit" class="btn btn-verde" id="btnSubmeterAgendamento" style="width: 100%; padding: 15px; font-size: 1.05rem; gap: 10px;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path>
                 </svg>
-                Solicitar Agendamento
+                Solicitar Agendamento no WhatsApp
               </button>
+              <p style="text-align: center; font-size: 0.82rem; color: var(--cor-texto-secundario); margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                <span>📲</span> Você será redirecionado(a) diretamente para o WhatsApp do vendedor com a mensagem pronta!
+              </p>
 
             </form>
           </div>
@@ -1054,17 +1187,151 @@
         <span>Total:</span>
         <strong id="gavetaTotalValor">R$ 0,00</strong>
       </div>
-      <button class="btn btn-verde" id="btnFinalizarPedidoWhats" style="width: 100%;">
+      <button class="btn btn-verde" id="btnFinalizarPedidoWhats" style="width: 100%; margin-bottom: 10px;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path>
         </svg>
         Finalizar Pedido no WhatsApp
       </button>
+      <button class="btn btn-secundario" id="btnDuvidasVendedorCarrinho" style="width: 100%;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Tirar Dúvidas com Vendedor
+      </button>
     </div>
   </aside>
 
   <!-- ========================================================================
-       10. BOTÃO FLUTUANTE DO WHATSAPP
+       10. MODAL DE CONTATO DIRETO COM O VENDEDOR
+       ======================================================================== -->
+  <div class="modal-vendedor-overlay" id="modalVendedorOverlay" role="dialog" aria-modal="true" aria-labelledby="modalVendedorTitulo">
+    <div class="modal-vendedor-card">
+      
+      <!-- Cabeçalho do Vendedor -->
+      <div class="modal-vendedor-cabecalho">
+        <div class="vendedor-perfil-bloco">
+          <div class="vendedor-avatar-moldura">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Consultora de Atendimento e Vendas Beatriz">
+            <span class="vendedor-status-dot" title="Online agora"></span>
+          </div>
+          <div class="vendedor-info-texto">
+            <h3 id="modalVendedorTitulo">Beatriz Santos</h3>
+            <p>
+              <span class="ponto-online"></span>
+              Consultora Especialista Pet · Online agora
+            </p>
+          </div>
+        </div>
+        <button class="modal-vendedor-fechar" id="btnFecharModalVendedor" aria-label="Fechar janela de contato">✕</button>
+      </div>
+
+      <!-- Corpo do Modal -->
+      <div class="modal-vendedor-corpo">
+        
+        <!-- Produto Selecionado -->
+        <div class="modal-produto-destaque" id="modalVendedorProdutoCard">
+          <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=200&q=80" alt="Produto" class="modal-produto-thumb" id="modalVendedorProdutoImg">
+          <div class="modal-produto-info">
+            <span class="modal-produto-rotulo" id="modalVendedorProdutoRotulo">Item Selecionado</span>
+            <h4 class="modal-produto-titulo" id="modalVendedorProdutoNome">Ração Premium Super Fórmula Cães 15kg</h4>
+            <div class="modal-produto-valor" id="modalVendedorProdutoPreco">R$ 149,90</div>
+          </div>
+        </div>
+
+        <!-- Dúvidas Rápidas (Chips de 1 clique) -->
+        <div class="duvidas-rapidas-bloco">
+          <span>Dúvidas Frequentes (clique para preencher):</span>
+          <div class="duvidas-chips-container">
+            <button type="button" class="chip-duvida" data-duvida="Olá! Gostaria de saber se este produto tem a pronta entrega na loja?">📦 Tem pronta entrega?</button>
+            <button type="button" class="chip-duvida" data-duvida="Olá! Como posso calcular o frete e prazo de entrega para meu endereço?">🚚 Como calcular frete?</button>
+            <button type="button" class="chip-duvida" data-duvida="Olá! Gostaria de saber se vocês oferecem desconto para pagamento via Pix?">🏷️ Desconto no Pix?</button>
+            <button type="button" class="chip-duvida" data-duvida="Olá! Esse produto é recomendado para filhotes ou apenas cães adultos?">🐾 É ideal para meu pet?</button>
+            <button type="button" class="chip-duvida" data-duvida="Olá! Gostaria de fechar o pedido diretamente com você!">🤝 Quero comprar agora!</button>
+          </div>
+        </div>
+
+        <!-- Mensagem do Cliente -->
+        <div class="modal-mensagem-bloco">
+          <label for="msgVendedorInput">Sua mensagem ou dúvida para a vendedora:</label>
+          <textarea id="msgVendedorInput" class="modal-mensagem-input" placeholder="Escreva aqui sua dúvida ou escolha uma das perguntas acima..."></textarea>
+        </div>
+
+        <!-- Botões de Ação para Contatar o Vendedor -->
+        <div class="modal-vendedor-acoes">
+          <!-- WhatsApp Oficial -->
+          <button class="btn-whats-vendedor" id="btnEnviarWhatsAppVendedor">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path>
+            </svg>
+            Conversar no WhatsApp com o Vendedor
+          </button>
+
+          <!-- Chat ao Vivo na Tela -->
+          <button class="btn-chat-vendedor" id="btnAbrirChatAoVivo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            Bate-papo ao Vivo na Tela
+          </button>
+        </div>
+
+        <div class="modal-vendedor-telefone-info">
+          <span>Prefere ligar?</span>
+          <a href="tel:1134567890">📞 (11) 3456-7890</a>
+          <span>· Seg a Sáb das 8h às 19h</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       11. JANELA DE BATE-PAPO FLUTUANTE COM O VENDEDOR (LIVE CHAT WIDGET)
+       ======================================================================== -->
+  <aside class="chat-vendedor-janela" id="chatVendedorJanela" aria-label="Janela de atendimento ao vivo">
+    <!-- Topo do Chat -->
+    <div class="chat-janela-cabecalho">
+      <div class="chat-janela-atendente">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Beatriz" class="chat-avatar-mini">
+        <div class="chat-atendente-dados">
+          <strong>Beatriz · Vendas Pata & Cia</strong>
+          <span>🟢 Resposta imediata</span>
+        </div>
+      </div>
+      <button class="chat-btn-fechar" id="btnFecharChatAoVivo" aria-label="Fechar bate-papo">✕</button>
+    </div>
+
+    <!-- Mensagens do Chat -->
+    <div class="chat-janela-mensagens" id="chatJanelaMensagens">
+      <!-- Boas-vindas inicial -->
+      <div class="chat-balao chat-balao-vendedor">
+        Olá! Seja muito bem-vindo(a) à Pata & Cia! 🐾 Sou a Beatriz, consultora de vendas. Como posso te ajudar com nossos produtos ou serviços hoje?
+      </div>
+    </div>
+
+    <!-- Indicador de Digitando (oculto por padrão) -->
+    <div class="chat-digitando" id="chatDigitando" style="display: none; margin: 0 16px 8px 16px;">
+      <span class="chat-ponto-digitando"></span>
+      <span class="chat-ponto-digitando"></span>
+      <span class="chat-ponto-digitando"></span>
+    </div>
+
+    <!-- Rodapé com Campo de Digitação -->
+    <div class="chat-janela-rodape">
+      <input type="text" id="chatInputTexto" class="chat-input-texto" placeholder="Digite sua mensagem para o vendedor...">
+      <button class="chat-btn-enviar" id="btnEnviarMsgChat" title="Enviar mensagem" aria-label="Enviar mensagem">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       12. BOTÃO FLUTUANTE DO WHATSAPP
        ======================================================================== -->
   <aside class="whatsapp-flutuante" aria-label="Atendimento rápido via WhatsApp">
     <div class="whatsapp-tooltip">
