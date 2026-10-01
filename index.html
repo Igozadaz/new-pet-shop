@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pata & Cia | Pet Shop, Banho e Tosa e Clínica Veterinária</title>
+  <meta name="description" content="Pata & Cia é o Pet Shop mais completo e acolhedor para o seu melhor amigo. Serviços de banho e tosa, veterinário, hotelzinho e produtos exclusivos com carinho e dedicação.">
+  
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:title" content="Pata & Cia | Pet Shop Moderno">
+  <meta property="og:description" content="O cuidado, carinho e dedicação que seu pet merece. Conheça nossos serviços e produtos.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon com SVG de Patinha -->
+  <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
+
+  <!-- Folha de Estilos Principal -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. CABEÇALHO E MENU DE NAVEGAÇÃO
+       ======================================================================== -->
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      
+      <!-- Logotipo da Pata & Cia -->
+      <a href="#inicio" class="logo" aria-label="Ir para o início da Pata & Cia">
+        <div class="logo-icone">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <ellipse cx="6.5" cy="8" rx="2.2" ry="3.2" fill="#0284c7" />
+            <ellipse cx="17.5" cy="8" rx="2.2" ry="3.2" fill="#0284c7" />
+            <ellipse cx="10" cy="4" rx="2.2" ry="3.2" fill="#10b981" />
+            <ellipse cx="14" cy="4" rx="2.2" ry="3.2" fill="#10b981" />
+            <path d="M12 9.5 C8 9.5 5 13 6 18 C7 21 11 22 12 22 C13 22 17 21 18 18 C19 13 16 9.5 12 9.5 Z" fill="#0284c7" />
+          </svg>
+        </div>
+        <span class="logo-texto">Pata<span>&</span>Cia</span>
+      </a>
+
+      <!-- Menu de Navegação para Telas Médias e Grandes -->
+      <nav class="menu-desktop" aria-label="Navegação principal">
+        <a href="#inicio" class="menu-link ativo">Início</a>
+        <a href="#servicos" class="menu-link">Serviços</a>
+        <a href="#produtos" class="menu-link">Produtos</a>
+        <a href="#sobre" class="menu-link">Sobre</a>
+        <a href="#depoimentos" class="menu-link">Depoimentos</a>
+        <a href="#galeria" class="menu-link">Galeria</a>
+        <a href="#contato" class="menu-link">Contato</a>
+      </nav>
+
+      <!-- Ações do Cabeçalho: Carrinho de Compras e Agendamento -->
+      <div class="cabecalho-acoes">
+        <!-- Botão do Carrinho -->
+        <button class="btn-carrinho-gatilho" id="btnCarrinhoGatilho" title="Ver carrinho de compras" aria-label="Abrir carrinho">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="carrinho-contador" id="carrinhoContador">0</span>
+        </button>
+
+        <!-- Botão Agendar Rápido -->
+        <a href="#contato" class="btn btn-primario">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Agendar Horário
+        </a>
+
+        <!-- Botão Hambúrguer Mobile -->
+        <button class="btn-menu-mobile" id="btnMenuMobile" aria-label="Abrir menu mobile" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Menu Gaveta Mobile -->
+    <div class="menu-mobile-gaveta" id="menuMobileGaveta">
+      <a href="#inicio" class="menu-link">Início</a>
+      <a href="#servicos" class="menu-link">Serviços</a>
+      <a href="#produtos" class="menu-link">Produtos</a>
+      <a href="#sobre" class="menu-link">Sobre Nós</a>
+      <a href="#depoimentos" class="menu-link">Depoimentos</a>
+      <a href="#galeria" class="menu-link">Galeria de Pets</a>
+      <a href="#contato" class="menu-link">Contato e Localização</a>
+      <a href="#contato" class="btn btn-primario" style="margin-top: 10px;">Agendar Serviço</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================
+         2. PÁGINA INICIAL / SEÇÃO HERO COM IMAGEM DE CACHORRO E GATO
+         ======================================================================== -->
+    <section class="secao-hero" id="inicio">
+      <div class="container hero-grade">
+        
+        <!-- Bloco de Texto do Hero -->
+        <div class="hero-texto">
+          <div class="hero-selo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+            Pet Shop & Clínica Veterinária de Referência
+          </div>
+
+          <h1 class="hero-titulo">
+            O carinho e o cuidado que o seu <span class="destaque-azul">pet ama</span> e você <span class="destaque-verde">confia</span>!
+          </h1>
+
+          <p class="hero-subtitulo">
+            Na <strong>Pata & Cia</strong>, tratamos seu cãozinho e gatinho como membros da nossa família. 
+            Ambiente climatizado, produtos premium e equipe apaixonada por animais.
+          </p>
+
+          <div class="hero-botoes">
+            <a href="#servicos" class="btn btn-primario">
+              Conhecer Nossos Serviços
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#produtos" class="btn btn-secundario">
+              Ver Produtos
+            </a>
+          </div>
+
+          <!-- Destaques / Diferenciais -->
+          <div class="hero-diferenciais">
+            <div class="diferencial-item">
+              <div class="diferencial-icone">⭐</div>
+              <div class="diferencial-texto">
+                +15.000<br>Pets Felizes
+              </div>
+            </div>
+            <div class="diferencial-item">
+              <div class="diferencial-icone">🩺</div>
+              <div class="diferencial-texto">
+                Veterinários<br>Especializados
+              </div>
+            </div>
+            <div class="diferencial-item">
+              <div class="diferencial-icone">🛁</div>
+              <div class="diferencial-texto">
+                Água Morna &<br>Toalhas Esterilizadas
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grande Imagem com Cachorro e Gato Juntos -->
+        <div class="hero-imagem-container">
+          <div class="hero-imagem-moldura">
+            <img 
+              src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1000&q=80" 
+              alt="Cachorro e gato abraçados com muito amor na Pata e Cia"
+              loading="eager"
+            >
+          </div>
+
+          <!-- Card Flutuante com Efeito -->
+          <div class="hero-card-flutuante">
+            <div class="card-flutuante-icone">❤️</div>
+            <div class="card-flutuante-texto">
+              <strong>100% Amor Animal</strong>
+              <span>Banho sem estresse garantido</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. SEÇÃO DE SERVIÇOS (BANHO E TOSA, VETERINÁRIO, HOTEL E HIGIENE)
+         ======================================================================== -->
+    <section class="secao-servicos" id="servicos">
+      <div class="container">
+        
+        <div class="secao-cabecalho">
+          <span class="secao-kicker">Cuidado Especializado</span>
+          <h2 class="secao-titulo">Serviços Feitos com <span>Dedicação</span></h2>
+          <p class="secao-descricao">
+            Oferecemos uma experiência segura, tranquila e divertida para o bem-estar e a saúde do seu pet.
+          </p>
+        </div>
+
+        <div class="grade-servicos">
+          
+          <!-- Serviço 1: Banho e Tosa -->
+          <article class="card-servico">
+            <div class="card-servico-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=600&q=80" 
+                alt="Banho e Tosa completo na Pata e Cia"
+                loading="lazy"
+              >
+              <div class="card-servico-icone-badge" title="Banho e Tosa">✂️</div>
+            </div>
+            <div class="card-servico-corpo">
+              <h3 class="card-servico-titulo">Banho & Tosa Especial</h3>
+              <p class="card-servico-descricao">
+                Higienização com produtos hipoalergênicos de alta qualidade, tosa higiênica, na tesoura ou de acordo com a raça.
+              </p>
+              <ul class="card-servico-lista">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Secagem suave e silenciosa
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Hidratação dos pelos
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Laço ou gravatinha de cortesia
+                </li>
+              </ul>
+              <div class="card-servico-preco">
+                A partir de <strong>R$ 65,00</strong>
+              </div>
+              <button class="btn btn-primario btn-agendar-servico" data-servico="Banho e Tosa Especial">
+                Agendar este Serviço
+              </button>
+            </div>
+          </article>
+
+          <!-- Serviço 2: Atendimento Veterinário -->
+          <article class="card-servico">
+            <div class="card-servico-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=600&q=80" 
+                alt="Consulta Veterinária Pata e Cia"
+                loading="lazy"
+              >
+              <div class="card-servico-icone-badge" title="Clínica Veterinária">🩺</div>
+            </div>
+            <div class="card-servico-corpo">
+              <h3 class="card-servico-titulo">Clínica Veterinária</h3>
+              <p class="card-servico-descricao">
+                Consultas clínicas gerais, vacinação importada, exames laboratoriais preventivos e orientações nutricionais.
+              </p>
+              <ul class="card-servico-lista">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Check-up clínico completo
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Vacinas V8, V10, Raiva e Giárgia
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Acompanhamento de filhotes e idosos
+                </li>
+              </ul>
+              <div class="card-servico-preco">
+                Consulta a partir de <strong>R$ 110,00</strong>
+              </div>
+              <button class="btn btn-verde btn-agendar-servico" data-servico="Consulta Veterinária">
+                Agendar Consulta
+              </button>
+            </div>
+          </article>
+
+          <!-- Serviço 3: Hotelzinho e Creche Pet -->
+          <article class="card-servico">
+            <div class="card-servico-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=600&q=80" 
+                alt="Hotel Pet e Creche Pata e Cia"
+                loading="lazy"
+              >
+              <div class="card-servico-icone-badge" title="Hotel Pet">🏡</div>
+            </div>
+            <div class="card-servico-corpo">
+              <h3 class="card-servico-titulo">Hotelzinho & Creche</h3>
+              <p class="card-servico-descricao">
+                Vai viajar ou trabalhar fora o dia todo? Deixe seu pet se divertir em um espaço amplo com recreadores especializados.
+              </p>
+              <ul class="card-servico-lista">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Acompanhamento por câmeras
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Atividades de enriquecimento ambiental
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Dormitórios individuais e confortáveis
+                </li>
+              </ul>
+              <div class="card-servico-preco">
+                Diária a partir de <strong>R$ 85,00</strong>
+              </div>
+              <button class="btn btn-primario btn-agendar-servico" data-servico="Hotelzinho e Creche">
+                Reservar Hospedagem
+              </button>
+            </div>
+          </article>
+
+          <!-- Serviço 4: Higiene & Spa Relaxante -->
+          <article class="card-servico">
+            <div class="card-servico-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=600&q=80" 
+                alt="Spa e Higiene Pet"
+                loading="lazy"
+              >
+              <div class="card-servico-icone-badge" title="Higiene e Spa">🫧</div>
+            </div>
+            <div class="card-servico-corpo">
+              <h3 class="card-servico-titulo">Higiene & Spa Pet</h3>
+              <p class="card-servico-descricao">
+                Sessões relaxantes com banho de ofurô, ozonioterapia, corte seguro de unhas e limpeza auricular minuciosa.
+              </p>
+              <ul class="card-servico-lista">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Banho de ofurô com óleos naturais
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Corte e lixamento de unhas
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Higienização de dentes e orelhas
+                </li>
+              </ul>
+              <div class="card-servico-preco">
+                Sessão a partir de <strong>R$ 55,00</strong>
+              </div>
+              <button class="btn btn-verde btn-agendar-servico" data-servico="Higiene e Spa Relaxante">
+                Agendar Spa
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. SEÇÃO DE PRODUTOS COM FILTRO, PREÇOS E CARRINHO
+         ======================================================================== -->
+    <section class="secao-produtos" id="produtos">
+      <div class="container">
+        
+        <div class="secao-cabecalho">
+          <span class="secao-kicker">Loja Pata & Cia</span>
+          <h2 class="secao-titulo">Produtos Selecionados para o seu <span>Amiguinho</span></h2>
+          <p class="secao-descricao">
+            Rações premium, acessórios duráveis e brinquedos aprovados pelos nossos pets.
+          </p>
+        </div>
+
+        <!-- Filtros Interativos por Categoria -->
+        <div class="filtros-produtos" role="group" aria-label="Filtrar produtos por categoria">
+          <button class="btn-filtro ativo" data-categoria="todos">Todos os Produtos</button>
+          <button class="btn-filtro" data-categoria="caes">Cachorros</button>
+          <button class="btn-filtro" data-categoria="gatos">Gatos</button>
+          <button class="btn-filtro" data-categoria="acessorios">Acessórios</button>
+          <button class="btn-filtro" data-categoria="higiene">Higiene</button>
+        </div>
+
+        <!-- Grade de Produtos -->
+        <div class="grade-produtos" id="gradeProdutos">
+          
+          <!-- Produto 1: Ração Cães -->
+          <article class="card-produto" data-categoria="caes">
+            <div class="card-produto-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=500&q=80" 
+                alt="Ração Premium Especial Cães Adultos"
+                loading="lazy"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <div class="card-produto-meta">Cachorros · Nutrição</div>
+              <h3 class="card-produto-nome">Ração Premium Super Fórmula Cães 15kg</h3>
+              <div class="card-produto-estrelas">★★★★★ <span>(4.9)</span></div>
+              <div class="card-produto-rodape">
+                <span class="card-produto-preco">R$ 149,90</span>
+                <button 
+                  class="btn-add-carrinho" 
+                  title="Adicionar ao carrinho"
+                  data-id="prod-1"
+                  data-nome="Ração Premium Cães 15kg"
+                  data-preco="149.90"
+                  data-img="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=200&q=80"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 2: Ração Gatos -->
+          <article class="card-produto" data-categoria="gatos">
+            <div class="card-produto-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=500&q=80" 
+                alt="Ração Super Gatos Castrados Salmão"
+                loading="lazy"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <div class="card-produto-meta">Gatos · Nutrição</div>
+              <h3 class="card-produto-nome">Ração Gourmet Gatos Castrados Sabor Salmão 10kg</h3>
+              <div class="card-produto-estrelas">★★★★★ <span>(5.0)</span></div>
+              <div class="card-produto-rodape">
+                <span class="card-produto-preco">R$ 129,90</span>
+                <button 
+                  class="btn-add-carrinho" 
+                  title="Adicionar ao carrinho"
+                  data-id="prod-2"
+                  data-nome="Ração Gourmet Gatos Salmão"
+                  data-preco="129.90"
+                  data-img="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=200&q=80"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 3: Caminha Nuvem -->
+          <article class="card-produto" data-categoria="acessorios">
+            <div class="card-produto-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=500&q=80" 
+                alt="Caminha Conforto Nuvem Ortopédica"
+                loading="lazy"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <div class="card-produto-meta">Acessórios · Conforto</div>
+              <h3 class="card-produto-nome">Caminha Redonda Confort Nuvem Pelúcia Lavável</h3>
+              <div class="card-produto-estrelas">★★★★★ <span>(4.8)</span></div>
+              <div class="card-produto-rodape">
+                <span class="card-produto-preco">R$ 179,00</span>
+                <button 
+                  class="btn-add-carrinho" 
+                  title="Adicionar ao carrinho"
+                  data-id="prod-3"
+                  data-nome="Caminha Nuvem Pelúcia Lavável"
+                  data-preco="179.00"
+                  data-img="https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=200&q=80"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 4: Brinquedo Mordedor Interativo -->
+          <article class="card-produto" data-categoria="caes">
+            <div class="card-produto-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=500&q=80" 
+                alt="Brinquedo Mordedor Interativo Dental"
+                loading="lazy"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <div class="card-produto-meta">Cachorros · Brinquedos</div>
+              <h3 class="card-produto-nome">Brinquedo Dental Interativo Borracha Resistente</h3>
+              <div class="card-produto-estrelas">★★★★★ <span>(4.9)</span></div>
+              <div class="card-produto-rodape">
+                <span class="card-produto-preco">R$ 38,90</span>
+                <button 
+                  class="btn-add-carrinho" 
+                  title="Adicionar ao carrinho"
+                  data-id="prod-4"
+                  data-nome="Brinquedo Dental Interativo"
+                  data-preco="38.90"
+                  data-img="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=200&q=80"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 5: Arranhador para Gatos -->
+          <article class="card-produto" data-categoria="gatos">
+            <div class="card-produto-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=500&q=80" 
+                alt="Arranhador Torre com Casinha para Gatos"
+                loading="lazy"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <div class="card-produto-meta">Gatos · Lazer</div>
+              <h3 class="card-produto-nome">Torre Arranhador com Casinha e Bolinha de Sisal</h3>
+              <div class="card-produto-estrelas">★★★★★ <span>(5.0)</span></div>
+              <div class="card-produto-rodape">
+                <span class="card-produto-preco">R$ 219,00</span>
+                <button 
+                  class="btn-add-carrinho" 
+                  title="Adicionar ao carrinho"
+                  data-id="prod-5"
+                  data-nome="Torre Arranhador com Casinha"
+                  data-preco="219.00"
+                  data-img="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=200&q=80"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 6: Coleira & Peitoral Ergonômico -->
+          <article class="card-produto" data-categoria="acessorios">
+            <div class="card-produto-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=500&q=80" 
+                alt="Peitoral e Guia Anti-Puxão Confortável"
+                loading="lazy"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <div class="card-produto-meta">Acessórios · Passeio</div>
+              <h3 class="card-produto-nome">Peitoral Ergonômico Anti-Puxão com Guia Reforçada</h3>
+              <div class="card-produto-estrelas">★★★★★ <span>(4.9)</span></div>
+              <div class="card-produto-rodape">
+                <span class="card-produto-preco">R$ 74,90</span>
+                <button 
+                  class="btn-add-carrinho" 
+                  title="Adicionar ao carrinho"
+                  data-id="prod-6"
+                  data-nome="Peitoral Ergonômico Anti-Puxão"
+                  data-preco="74.90"
+                  data-img="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=200&q=80"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 7: Shampoo Hipoalergênico -->
+          <article class="card-produto" data-categoria="higiene">
+            <div class="card-produto-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=500&q=80" 
+                alt="Shampoo Neutro Hipoalergênico Pet"
+                loading="lazy"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <div class="card-produto-meta">Higiene · Cuidados</div>
+              <h3 class="card-produto-nome">Shampoo Hidratante Hipoalergênico Camomila 500ml</h3>
+              <div class="card-produto-estrelas">★★★★★ <span>(4.7)</span></div>
+              <div class="card-produto-rodape">
+                <span class="card-produto-preco">R$ 42,50</span>
+                <button 
+                  class="btn-add-carrinho" 
+                  title="Adicionar ao carrinho"
+                  data-id="prod-7"
+                  data-nome="Shampoo Hipoalergênico 500ml"
+                  data-preco="42.50"
+                  data-img="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=200&q=80"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produto 8: Petiscos Crocantes Naturais -->
+          <article class="card-produto" data-categoria="caes">
+            <div class="card-produto-foto">
+              <img 
+                src="https://images.unsplash.com/photo-1582798358481-d199fb7347bb?auto=format&fit=crop&w=500&q=80" 
+                alt="Petisco Natural Crocante e Saudável"
+                loading="lazy"
+              >
+            </div>
+            <div class="card-produto-corpo">
+              <div class="card-produto-meta">Cachorros · Snacks</div>
+              <h3 class="card-produto-nome">Biscoitos Naturais Crocantes com Frutas e Aveia 250g</h3>
+              <div class="card-produto-estrelas">★★★★★ <span>(4.9)</span></div>
+              <div class="card-produto-rodape">
+                <span class="card-produto-preco">R$ 22,90</span>
+                <button 
+                  class="btn-add-carrinho" 
+                  title="Adicionar ao carrinho"
+                  data-id="prod-8"
+                  data-nome="Biscoitos Naturais 250g"
+                  data-preco="22.90"
+                  data-img="https://images.unsplash.com/photo-1582798358481-d199fb7347bb?auto=format&fit=crop&w=200&q=80"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. SEÇÃO SOBRE NÓS
+         ======================================================================== -->
+    <section class="secao-sobre" id="sobre">
+      <div class="container sobre-grade">
+        
+        <!-- Imagem e Selo de Anos de Experiência -->
+        <div class="sobre-imagem-bloco">
+          <img 
+            src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" 
+            alt="Ambiente acolhedor da Pata e Cia" 
+            class="sobre-foto-principal"
+            loading="lazy"
+          >
+          <div class="sobre-selo-experiencia">
+            <strong>10+</strong>
+            <span>Anos cuidando com amor</span>
+          </div>
+        </div>
+
+        <!-- Conteúdo Textual -->
+        <div class="sobre-texto">
+          <span class="secao-kicker">Nossa História</span>
+          <h2 class="secao-titulo">Mais que um Pet Shop, uma <span>Família</span> para o seu Pet</h2>
+          
+          <p class="secao-descricao">
+            A <strong>Pata & Cia</strong> nasceu do amor genuíno de dois médicos veterinários que sonhavam 
+            com um espaço onde cada animalzinho fosse tratado com respeito, calma e dignidade.
+          </p>
+
+          <p style="color: var(--cor-texto-secundario); font-size: 0.95rem;">
+            Aqui não existe banho apressado ou gaiolas apertadas. Nossas instalações foram planejadas para 
+            reduzir o estresse, com música relaxante, água aquecida na temperatura ideal e profissionais 
+            que amam o que fazem.
+          </p>
+
+          <div class="sobre-lista-itens">
+            <div class="sobre-item">
+              <div class="sobre-item-icone">🩺</div>
+              <div class="sobre-item-conteudo">
+                <h4>Equipe Veterinária Certificada</h4>
+                <p>Profissionais qualificados de plantão prontos para qualquer necessidade.</p>
+              </div>
+            </div>
+
+            <div class="sobre-item">
+              <div class="sobre-item-icone">🧼</div>
+              <div class="sobre-item-conteudo">
+                <h4>Higiene Máxima & Produtos Premium</h4>
+                <p>Toalhas 100% esterilizadas e cosméticos de primeira linha veterinária.</p>
+              </div>
+            </div>
+
+            <div class="sobre-item">
+              <div class="sobre-item-icone">❤️</div>
+              <div class="sobre-item-conteudo">
+                <h4>Filosofia Amigável sem Estresse</h4>
+                <p>Técnicas de manejo gentil para que seu pet volte sempre abanando o rabinho.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. SEÇÃO DE DEPOIMENTOS DE CLIENTES
+         ======================================================================== -->
+    <section class="secao-depoimentos" id="depoimentos">
+      <div class="container">
+        
+        <div class="secao-cabecalho">
+          <span class="secao-kicker">Quem Confia em Nós</span>
+          <h2 class="secao-titulo">O que os <span>Tutores</span> Dizem</h2>
+          <p class="secao-descricao">
+            A felicidade dos nossos clientes de quatro patas e a tranquilidade dos seus donos.
+          </p>
+        </div>
+
+        <div class="grade-depoimentos">
+          
+          <!-- Depoimento 1 -->
+          <article class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">
+              "O Pipoca sempre tinha medo de ir ao banho em outros lugares. Na Pata & Cia foi a primeira vez que ele voltou calmo, cheiroso e todo alegre! A equipe é muito carinhosa."
+            </p>
+            <div class="depoimento-autor">
+              <img 
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" 
+                alt="Mariana Silva, tutora do Pipoca" 
+                class="depoimento-avatar"
+              >
+              <div class="depoimento-info">
+                <strong>Mariana Silva</strong>
+                <span>Tutora do Pipoca (Spitz Alemão)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Depoimento 2 -->
+          <article class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">
+              "Serviço de hotelzinho impecável! Viajei por 7 dias e recebia fotos diárias do Thor brincando no gramado com outros cães. Total segurança e responsabilidade."
+            </p>
+            <div class="depoimento-autor">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" 
+                alt="Carlos Eduardo, tutor do Thor" 
+                class="depoimento-avatar"
+              >
+              <div class="depoimento-info">
+                <strong>Carlos Eduardo</strong>
+                <span>Tutor do Thor (Golden Retriever)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Depoimento 3 -->
+          <article class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">
+              "Minha gatinha Mingau é super assustada, mas os veterinários da Pata & Cia têm uma paciência incrível. Fizeram a consulta com muito carinho. Recomendo de olhos fechados!"
+            </p>
+            <div class="depoimento-autor">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" 
+                alt="Juliana Mendes, tutora da Mingau" 
+                class="depoimento-avatar"
+              >
+              <div class="depoimento-info">
+                <strong>Juliana Mendes</strong>
+                <span>Tutora da Mingau (Gata Siamesa)</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. GALERIA DE FOTOS DE PETS (COM LIGHTBOX EM JAVASCRIPT)
+         ======================================================================== -->
+    <section class="secao-galeria" id="galeria">
+      <div class="container">
+        
+        <div class="secao-cabecalho">
+          <span class="secao-kicker">Momentos Fofos</span>
+          <h2 class="secao-titulo">Galeria de <span>Pets Felizes</span></h2>
+          <p class="secao-descricao">
+            Clique em qualquer foto para ver em tamanho ampliado nossos amiguinhos produzidos e alegres!
+          </p>
+        </div>
+
+        <div class="grade-galeria">
+          
+          <div class="item-galeria" data-titulo="Bob Feliz no Pós-Banho" data-desc="Banho hidratante e tosa higiênica impecável.">
+            <img 
+              src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=80" 
+              alt="Golden Retriever sorrindo após banho" 
+              loading="lazy"
+            >
+            <div class="item-galeria-overlay">
+              <strong>Bob Feliz</strong>
+              <span>Ver em tela cheia 🔍</span>
+            </div>
+          </div>
+
+          <div class="item-galeria" data-titulo="Mia, a Gatinha Charmosa" data-desc="Sessão especial de escovação e corte de unhas.">
+            <img 
+              src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=80" 
+              alt="Gatinho charmoso olhando para a câmera" 
+              loading="lazy"
+            >
+            <div class="item-galeria-overlay">
+              <strong>Mia Charmosa</strong>
+              <span>Ver em tela cheia 🔍</span>
+            </div>
+          </div>
+
+          <div class="item-galeria" data-titulo="Melzinha Elegante" data-desc="Tosa na tesoura especial com lacinho verde Pata & Cia.">
+            <img 
+              src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=700&q=80" 
+              alt="Cãozinho tosado com visual fofo" 
+              loading="lazy"
+            >
+            <div class="item-galeria-overlay">
+              <strong>Melzinha Elegante</strong>
+              <span>Ver em tela cheia 🔍</span>
+            </div>
+          </div>
+
+          <div class="item-galeria" data-titulo="Bento e Amigos na Creche" data-desc="Diversão garantida e socialização monitorada o dia todo.">
+            <img 
+              src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80" 
+              alt="Filhote fofo brincando na creche pet" 
+              loading="lazy"
+            >
+            <div class="item-galeria-overlay">
+              <strong>Bento na Creche</strong>
+              <span>Ver em tela cheia 🔍</span>
+            </div>
+          </div>
+
+          <div class="item-galeria" data-titulo="Oliver Curioso" data-desc="Gato filhote em consulta preventiva de rotina.">
+            <img 
+              src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=700&q=80" 
+              alt="Gatinho fofo e curioso" 
+              loading="lazy"
+            >
+            <div class="item-galeria-overlay">
+              <strong>Oliver Curioso</strong>
+              <span>Ver em tela cheia 🔍</span>
+            </div>
+          </div>
+
+          <div class="item-galeria" data-titulo="Tico Pronto para Passear" data-desc="Com coleira nova e peitoral adquirido na lojinha.">
+            <img 
+              src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=700&q=80" 
+              alt="Buldogue Francês pronto para passear" 
+              loading="lazy"
+            >
+            <div class="item-galeria-overlay">
+              <strong>Tico Estiloso</strong>
+              <span>Ver em tela cheia 🔍</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Modal Lightbox (Ampliação de imagem da galeria) -->
+    <div class="modal-lightbox" id="modalLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-lightbox-conteudo">
+        <button class="modal-lightbox-fechar" id="modalLightboxFechar" aria-label="Fechar ampliação">✕</button>
+        <img src="" alt="" class="modal-lightbox-imagem" id="modalLightboxImg">
+        <div class="modal-lightbox-legenda">
+          <div>
+            <strong id="modalLightboxTitulo" style="display: block; font-size: 1.1rem; color: var(--cor-azul-marinho);">Pet</strong>
+            <span id="modalLightboxSubtitulo" style="font-size: 0.875rem; color: var(--cor-texto-secundario);">Pata & Cia</span>
+          </div>
+          <span style="color: var(--cor-verde-primario); font-weight: 700; font-size: 0.85rem;">Pata & Cia Pet Shop</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         8. SEÇÃO DE CONTATO E FORMULÁRIO COM VALIDAÇÃO EM JAVASCRIPT
+         ======================================================================== -->
+    <section class="secao-contato" id="contato">
+      <div class="container">
+        
+        <div class="secao-cabecalho">
+          <span class="secao-kicker">Fale Conosco</span>
+          <h2 class="secao-titulo">Agende uma Visita ou <span>Tire Dúvidas</span></h2>
+          <p class="secao-descricao">
+            Preencha os dados do seu pet abaixo. Responderemos em minutos com confirmação de horário!
+          </p>
+        </div>
+
+        <div class="contato-grade">
+          
+          <!-- Coluna 1: Informações de Contato -->
+          <div class="contato-info-painel">
+            <div class="contato-info-topo">
+              <h3>Venha nos visitar!</h3>
+              <p>Estamos de portas abertas para receber você e seu companheiro com água fresca, petisco e muito afeto.</p>
+            </div>
+
+            <div class="contato-itens-lista">
+              <div class="contato-detalhe-item">
+                <div class="contato-detalhe-icone">📍</div>
+                <div class="contato-detalhe-texto">
+                  <strong>Endereço</strong>
+                  <span>Av. dos Bichinhos, 1250 - Jardins</span>
+                </div>
+              </div>
+
+              <div class="contato-detalhe-item">
+                <div class="contato-detalhe-icone">📞</div>
+                <div class="contato-detalhe-texto">
+                  <strong>Telefone Fixo / Central</strong>
+                  <span>(11) 3456-7890</span>
+                </div>
+              </div>
+
+              <div class="contato-detalhe-item">
+                <div class="contato-detalhe-icone">💬</div>
+                <div class="contato-detalhe-texto">
+                  <strong>WhatsApp Direto</strong>
+                  <span>(11) 99999-8888</span>
+                </div>
+              </div>
+
+              <div class="contato-detalhe-item">
+                <div class="contato-detalhe-icone">✉️</div>
+                <div class="contato-detalhe-texto">
+                  <strong>E-mail</strong>
+                  <span>contato@pataecia.com.br</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contato-horario-box">
+              <strong style="display: block; margin-bottom: 4px; color: #fff;">⏰ Horário de Atendimento</strong>
+              <p>Segunda a Sexta: 08h às 19h<br>Sábados: 08h às 18h | Domingos: 09h às 14h</p>
+            </div>
+          </div>
+
+          <!-- Coluna 2: Formulário com Validação em JS -->
+          <div class="contato-formulario-painel">
+            <form id="formContato" novalidate>
+              
+              <div class="form-linha">
+                <!-- Nome do Tutor -->
+                <div class="form-grupo">
+                  <label for="formNome" class="form-label">Seu Nome Completo *</label>
+                  <input type="text" id="formNome" class="form-input" placeholder="Ex: Ana Paula Souza" required>
+                  <span class="mensagem-erro">Informe seu nome</span>
+                </div>
+
+                <!-- Nome do Pet -->
+                <div class="form-grupo">
+                  <label for="formPet" class="form-label">Nome do seu Pet *</label>
+                  <input type="text" id="formPet" class="form-input" placeholder="Ex: Fred, Mel, Luna..." required>
+                  <span class="mensagem-erro">Informe o nome do pet</span>
+                </div>
+              </div>
+
+              <div class="form-linha">
+                <!-- Tipo de Pet -->
+                <div class="form-grupo">
+                  <label for="formTipoPet" class="form-label">Espécie do Pet</label>
+                  <select id="formTipoPet" class="form-select">
+                    <option value="Cachorro">Cachorro 🐶</option>
+                    <option value="Gato">Gato 🐱</option>
+                    <option value="Outro">Outro amiguinho 🐰</option>
+                  </select>
+                </div>
+
+                <!-- WhatsApp / Celular -->
+                <div class="form-grupo">
+                  <label for="formTelefone" class="form-label">WhatsApp com DDD *</label>
+                  <input type="tel" id="formTelefone" class="form-input" placeholder="(11) 99999-9999" required maxlength="15">
+                  <span class="mensagem-erro">Informe um telefone com DDD</span>
+                </div>
+              </div>
+
+              <!-- Serviço Desejado -->
+              <div class="form-grupo">
+                <label for="formServico" class="form-label">Serviço Desejado *</label>
+                <select id="formServico" class="form-select" required>
+                  <option value="">Selecione um serviço...</option>
+                  <option value="Banho e Tosa Especial">Banho & Tosa Especial</option>
+                  <option value="Consulta Veterinária">Consulta Veterinária</option>
+                  <option value="Hotelzinho e Creche">Hotelzinho & Creche Pet</option>
+                  <option value="Higiene e Spa Relaxante">Higiene & Spa Relaxante</option>
+                  <option value="Dúvida Geral / Outro">Dúvida Geral / Outro Assunto</option>
+                </select>
+                <span class="mensagem-erro">Escolha um serviço</span>
+              </div>
+
+              <!-- Mensagem ou Observações -->
+              <div class="form-grupo">
+                <label for="formMensagem" class="form-label">Observações sobre o Pet *</label>
+                <textarea id="formMensagem" class="form-textarea" placeholder="Conte-nos o porte, raça, preferências ou dia/horário de sua preferência..." required></textarea>
+                <span class="mensagem-erro">Escreva uma mensagem breve</span>
+              </div>
+
+              <!-- Botão de Envio -->
+              <button type="submit" class="btn btn-verde" style="width: 100%; padding: 14px; font-size: 1.05rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                Solicitar Agendamento
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       9. GAVETA / DRAWER DO CARRINHO DE PRODUTOS
+       ======================================================================== -->
+  <div class="gaveta-carrinho-overlay" id="gavetaCarrinhoOverlay"></div>
+  <aside class="gaveta-carrinho" id="gavetaCarrinho" aria-label="Carrinho de compras">
+    <div class="gaveta-cabecalho">
+      <h3>Seu Carrinho 🐾</h3>
+      <button class="gaveta-fechar" id="btnFecharCarrinho" aria-label="Fechar carrinho">✕</button>
+    </div>
+
+    <div class="gaveta-itens" id="gavetaItens">
+      <!-- Inserido dinamicamente pelo JavaScript -->
+    </div>
+
+    <div class="gaveta-rodape">
+      <div class="gaveta-total">
+        <span>Total:</span>
+        <strong id="gavetaTotalValor">R$ 0,00</strong>
+      </div>
+      <button class="btn btn-verde" id="btnFinalizarPedidoWhats" style="width: 100%;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path>
+        </svg>
+        Finalizar Pedido no WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       10. BOTÃO FLUTUANTE DO WHATSAPP
+       ======================================================================== -->
+  <aside class="whatsapp-flutuante" aria-label="Atendimento rápido via WhatsApp">
+    <div class="whatsapp-tooltip">
+      Dúvidas? Fale Conosco! 🐶
+    </div>
+    <a 
+      href="https://wa.me/5511999998888?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20do%20Pet%20Shop%20Pata%20%26%20Cia!" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="whatsapp-botao"
+      aria-label="Iniciar conversa no WhatsApp da Pata e Cia"
+    >
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.2 1.26-1.68 1.3-.46.04-1.06.07-3.41-.85-2.02-.79-3.32-2.84-3.42-2.97-.1-.13-2.3-3.06-2.3-5.84 0-2.77 1.45-4.13 1.97-4.7.51-.56 1.12-.7 1.49-.7.37 0 .74.01 1.07.03.35.02.82-.13 1.28.98.47 1.14 1.6 3.92 1.74 4.21.14.29.23.63.04 1.01-.19.38-.28.61-.56.93-.28.32-.59.71-.84.96-.28.28-.57.58-.25 1.13.32.55 1.42 2.34 3.04 3.79 2.08 1.86 3.84 2.43 4.39 2.7.55.28.87.23 1.2-.14.33-.37 1.41-1.64 1.79-2.2.37-.56.75-.47 1.26-.28.51.19 3.25 1.53 3.81 1.81.56.28.93.42 1.07.65.14.23.14 1.35-.1 2.03z"></path>
+      </svg>
+    </a>
+  </aside>
+
+  <!-- ========================================================================
+       11. NOTIFICAÇÃO TOAST VISUAL (FEEDBACK)
+       ======================================================================== -->
+  <div class="toast-notificacao" id="toastNotificacao" role="alert" aria-live="polite">
+    <span class="toast-icone" style="font-size: 1.3rem;">🐾</span>
+    <span class="toast-texto">Operação realizada com sucesso!</span>
+  </div>
+
+  <!-- ========================================================================
+       12. RODAPÉ (FOOTER) COM REDES SOCIAIS E INFORMAÇÕES
+       ======================================================================== -->
+  <footer class="rodape">
+    <div class="container">
+      
+      <div class="rodape-grade">
+        
+        <!-- Coluna 1: Sobre -->
+        <div class="rodape-coluna-sobre">
+          <a href="#inicio" class="logo" style="color: #fff; margin-bottom: 16px;">
+            <div class="logo-icone" style="background: rgba(255,255,255,0.15);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <ellipse cx="6.5" cy="8" rx="2.2" ry="3.2" fill="#38bdf8" />
+                <ellipse cx="17.5" cy="8" rx="2.2" ry="3.2" fill="#38bdf8" />
+                <ellipse cx="10" cy="4" rx="2.2" ry="3.2" fill="#34d399" />
+                <ellipse cx="14" cy="4" rx="2.2" ry="3.2" fill="#34d399" />
+                <path d="M12 9.5 C8 9.5 5 13 6 18 C7 21 11 22 12 22 C13 22 17 21 18 18 C19 13 16 9.5 12 9.5 Z" fill="#38bdf8" />
+              </svg>
+            </div>
+            <span>Pata<span style="color: var(--cor-verde-primario);">&</span>Cia</span>
+          </a>
+
+          <p>
+            O Pet Shop e Clínica Veterinária preferido de quem ama seus bichinhos. 
+            Cuidado profissional, estrutura segura e produtos de alta qualidade.
+          </p>
+
+          <div class="rodape-redes-sociais">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="rede-social-icone" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="rede-social-icone" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="rede-social-icone" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0f172a"></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Links Rápidos -->
+        <div>
+          <h4 class="rodape-coluna-titulo">Navegação</h4>
+          <ul class="rodape-links-lista">
+            <li><a href="#inicio" class="rodape-link">› Início</a></li>
+            <li><a href="#servicos" class="rodape-link">› Nossos Serviços</a></li>
+            <li><a href="#produtos" class="rodape-link">› Loja e Produtos</a></li>
+            <li><a href="#sobre" class="rodape-link">› Quem Somos</a></li>
+            <li><a href="#depoimentos" class="rodape-link">› Depoimentos</a></li>
+            <li><a href="#galeria" class="rodape-link">› Galeria de Fotos</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Serviços -->
+        <div>
+          <h4 class="rodape-coluna-titulo">Serviços</h4>
+          <ul class="rodape-links-lista">
+            <li><a href="#servicos" class="rodape-link">› Banho e Tosa</a></li>
+            <li><a href="#servicos" class="rodape-link">› Clínica Veterinária</a></li>
+            <li><a href="#servicos" class="rodape-link">› Hotel & Creche Pet</a></li>
+            <li><a href="#servicos" class="rodape-link">› Spa & Ozonioterapia</a></li>
+            <li><a href="#servicos" class="rodape-link">› Vacinação Importada</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Contato & Localização -->
+        <div>
+          <h4 class="rodape-coluna-titulo">Atendimento</h4>
+          <div class="rodape-contato-lista">
+            <div class="rodape-contato-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Av. dos Bichinhos, 1250 - Jardins, São Paulo - SP</span>
+            </div>
+            <div class="rodape-contato-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>(11) 3456-7890</span>
+            </div>
+            <div class="rodape-contato-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Seg à Sáb: 08h - 19h | Dom: 09h - 14h</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Linha Inferior com Copyright -->
+      <div class="rodape-inferior">
+        <p>&copy; 2026 Pata & Cia Pet Shop. Todos os direitos reservados.</p>
+        <p>Desenvolvido com HTML, CSS e JavaScript moderno.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script JavaScript Principal -->
+  <script src="/js/script.js"></script>
+</body>
+</html>

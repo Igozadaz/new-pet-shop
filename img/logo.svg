@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Pata estilizada com coração nas cores azul e verde -->
+  <circle cx="16" cy="14" r="5" fill="#0284c7" />
+  <circle cx="32" cy="14" r="5" fill="#0284c7" />
+  <circle cx="8" cy="24" r="4.5" fill="#10b981" />
+  <circle cx="40" cy="24" r="4.5" fill="#10b981" />
+  <!-- Almofada central no formato de coração arredondado -->
+  <path d="M24 20 C18 19, 13 25, 15 32 C17 38, 23 43, 24 44 C25 43, 31 38, 33 32 C35 25, 30 19, 24 20 Z" fill="#0284c7" />
+  <!-- Detalhe interno verde -->
+  <path d="M24 26 C20 25, 17 29, 18 33 C20 37, 23 40, 24 41 C25 40, 28 37, 30 33 C31 29, 28 25, 24 26 Z" fill="#10b981" opacity="0.3" />
+</svg>

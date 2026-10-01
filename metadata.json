@@ -1,0 +1,6 @@
+{
+  "name": "Pata & Cia - Pet Shop",
+  "description": "Site moderno, elegante e responsivo para o Pet Shop Pata & Cia com serviços, produtos, galeria, depoimentos e agendamento.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
